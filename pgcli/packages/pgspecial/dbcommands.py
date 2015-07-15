@@ -18,7 +18,8 @@ def list_databases(cur, **_):
     else:
         return [(None, None, None, cur.statusmessage)]
 
-@special_command('\\du', '\\du[+] [pattern]', 'List roles.')
+@special_command('\\dg', '\\du[+] [pattern]', 'List roles.')
+@special_command('\\du', '\\dg[+] [pattern]', 'List roles.')
 def list_roles(cur, pattern, verbose):
     """
     Returns (title, rows, headers, status)
